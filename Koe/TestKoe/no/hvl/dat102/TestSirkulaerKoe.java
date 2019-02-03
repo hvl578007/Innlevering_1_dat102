@@ -111,12 +111,15 @@ public class TestSirkulaerKoe {
 
     }
 
+    //unødvendig men tok den med...
     @Test
-    public final void koeReversererIkkje() {
+    public final void koeReversererIkkjeAntall() {
         koe.innKoe(e2);
         koe.innKoe(e3);
         koe.innKoe(e4);
         koe.innKoe(e5);
+
+        assertEquals(4, koe.antall());
         
         try {
             assertNotEquals(e5, koe.utKoe());

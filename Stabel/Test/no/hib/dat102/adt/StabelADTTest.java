@@ -17,14 +17,14 @@ import no.hib.dat102.exception.EmptyCollectionException;
 public abstract class StabelADTTest {
 
 	// Referanse til stabel
-	private StabelADT<Integer> stabel;
+	protected StabelADT<Integer> stabel;
 
 	// Testdata
-	private Integer e0 = 1;
-	private Integer e1 = 2;
-	private Integer e2 = 3;
-	private Integer e3 = 4;
-	private Integer e4 = 5;
+	protected Integer e0 = 1;
+	protected Integer e1 = 2;
+	protected Integer e2 = 3;
+	protected Integer e3 = 4;
+	protected Integer e4 = 5;
 
 	protected abstract StabelADT<Integer> reset();
 	/**
@@ -37,7 +37,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test på at en ny stabel er tom.
+	 * Test pï¿½ at en ny stabel er tom.
 	 */
 	@Test
 	public final void nyStabelErTom() {
@@ -45,7 +45,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test opå push and pop.
+	 * Test opï¿½ push and pop.
 	 */
 	@Test
 	public final void pushOgPop() {
@@ -66,7 +66,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test på push og pop med duplikate verdier.
+	 * Test pï¿½ push og pop med duplikate verdier.
 	 */
 	@Test
 	public final void pushOgPopMedDuplikater() {
@@ -87,7 +87,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Testing på peek.
+	 * Testing pï¿½ peek.
 	 */
 	@Test
 	public final void pushPopPushPushPopPeek() {
@@ -105,7 +105,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test på at en stabel med noen elementer ikke er tom.
+	 * Test pï¿½ at en stabel med noen elementer ikke er tom.
 	 */
 	@Test
 	public final void erIkkeTom() {
@@ -115,7 +115,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test på at en stabel med null elementer er tom.
+	 * Test pï¿½ at en stabel med null elementer er tom.
 	 */
 	@Test
 	public final void pushPopErTom() {
@@ -130,7 +130,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Test på størrelsen
+	 * Test pï¿½ stï¿½rrelsen
 	 */
 	@Test
 	public final void stor() {
@@ -141,7 +141,7 @@ public abstract class StabelADTTest {
 	}
 
 	/**
-	 * Forsøk på pop av en tom stabel skal gi "underflow excepton" *
+	 * Forsï¿½k pï¿½ pop av en tom stabel skal gi "underflow excepton" *
 	 * 
 	 * @throws EmptyCollectionException
 	 *             expected exception
