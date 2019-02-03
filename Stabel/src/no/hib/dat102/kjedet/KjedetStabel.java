@@ -1,7 +1,7 @@
-package no.hvl.dat102.kjedet;
+package no.hib.dat102.kjedet;
 
-import no.hvl.dat102.adt.StabelADT;
-import no.hvl.dat102.exception.EmptyCollectionException;
+import no.hib.dat102.adt.StabelADT;
+import no.hib.dat102.exception.EmptyCollectionException;
 
 public class KjedetStabel<T> implements StabelADT<T> {
 	private LinearNode<T> topp;
@@ -21,10 +21,11 @@ public class KjedetStabel<T> implements StabelADT<T> {
 	}
 
 	@Override
-	public T pop() throws EmptyCollectionException {
-		if (erTom())
-			throw new EmptyCollectionException("stabel");
-
+	public T pop()  {
+		if(erTom()) {
+			throw new EmptyCollectionException("Stabel");
+		}
+		
 		T resultat = topp.getElement();
 		topp = topp.getNeste();
 		antall--;
@@ -32,7 +33,7 @@ public class KjedetStabel<T> implements StabelADT<T> {
 	}
 
 	@Override
-	public T peek() throws EmptyCollectionException {
+	public T peek() {
 		if (erTom())
 			throw new EmptyCollectionException("stabel");
 		

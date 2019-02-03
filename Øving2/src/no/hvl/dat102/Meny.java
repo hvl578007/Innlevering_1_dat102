@@ -33,7 +33,7 @@ public class Meny {
         if(val.equalsIgnoreCase("Y")) {
             System.out.println("Skriv inn filnamnet (eller stien):");
             String filnamn = lesar.nextLine();
-            Fil.lesFraFil(filnamn);
+            cda = Fil.lesFraFil(filnamn);
         }
 
         valAlternativUtskrift();

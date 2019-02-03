@@ -16,18 +16,17 @@ public class Fil {
      * @param filnamn
      * @param cda
      */
-    public static void lesFraFil(CDarkivADT cda, String filnamn) {
-        //sender med arkivet då ein slepp å endre objektet ein opprettar ved å berre opprette det i klient-klassen
+    public static CDarkivADT lesFraFil(String filnamn) {
+
+        CDarkivADT cda = null;
 
         try {
             BufferedReader innfil = new BufferedReader(new FileReader(filnamn));
 
             String linje = innfil.readLine();
             int n = Integer.parseInt(linje);
-            //cda = new CDarkiv(n);  //tabell-objekt, sender med objekt sidan ein lagar det i Meny-klassen
-            if (cda instanceof CDarkiv) { //lagar eit arkiv som har plass til akkuratt det som er i fila om det ein sender ved er tabell-arkivet
-                cda = new CDarkiv(n);
-            }
+                
+            cda = new CDarkiv(n);
 
             for (int i = 0; i < n; i++) {
 
@@ -56,7 +55,7 @@ public class Fil {
             System.exit(2);
         }
 
-        //return cda;
+        return cda;
     }
 
     /**
