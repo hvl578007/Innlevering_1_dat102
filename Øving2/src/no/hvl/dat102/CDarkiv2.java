@@ -37,8 +37,6 @@ public class CDarkiv2 implements CDarkivADT{
     @Override
     public void leggTilCD(CD nyCD) {
 
-        // MÅ SJÅ OVER!!!
-
         LinearNode<CD> nynode = new LinearNode<CD>(nyCD);
 
         if(antall == 0) {
@@ -56,8 +54,6 @@ public class CDarkiv2 implements CDarkivADT{
 
     @Override
     public boolean slettCD(int cdNr) {
-
-        // MÅ SJÅ OVER!!!
 
         boolean funne = false;
 
@@ -86,33 +82,28 @@ public class CDarkiv2 implements CDarkivADT{
     @Override
     public CD[] sokTittel(String delstreng) {
         
-        // MÅ SJÅ OVER!!!
-
         if(antall == 0) {
             return null;
         }
         CD[] cdtab = new CD[antall];
 
         LinearNode<CD> denne = start;
-        int i = 0;
-        while(denne != null && i < antall) {
+        int n = 0;
+        while(denne != null && n < antall) {
             CD cd = denne.getElement();
             
             if(cd.getTittel().contains(delstreng)) {
-                cdtab[i] = cd;
-                i++;
+                cdtab[n] = cd;
+                n++;
             }
             
             denne = denne.getNeste();
         }
-        // må ha ein trimtab !!! (?)
-        return trimTab(cdtab, cdtab.length);
+        return trimTab(cdtab, n);
     }
 
     @Override
     public CD[] sokArtist(String delstreng) {
-
-        // MÅ SJÅ OVER!!!
 
         if(antall == 0) {
             return null;
@@ -131,8 +122,7 @@ public class CDarkiv2 implements CDarkivADT{
             
             denne = denne.getNeste();
         }
-        // må ha ein trimtab !!! (?)
-        return trimTab(cdtab, cdtab.length);
+        return trimTab(cdtab, i);
     }
 
     @Override
@@ -155,8 +145,6 @@ public class CDarkiv2 implements CDarkivADT{
         return antall;
     }
 
-    // hjelpemetode for å trimme tabellar
-    // treng eg denne???
     private CD[] trimTab(CD[] tab, int n) {
         CD[] cdTab2 = new CD[n];
 

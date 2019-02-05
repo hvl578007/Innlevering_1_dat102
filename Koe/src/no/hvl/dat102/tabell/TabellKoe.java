@@ -14,7 +14,7 @@ import no.hvl.dat102.exception.EmptyCollectionException;
 public class TabellKoe<T> implements KoeADT<T> {
 
 	private final static int STDK = 100;
-	private int bak;// indokerer neste plass, er også antall
+	private int bak;// indikerer neste plass, er ogsï¿½ antall
 	private T[] koe; // front ved indeks 0
 
 	public TabellKoe() {
@@ -51,7 +51,7 @@ public class TabellKoe<T> implements KoeADT<T> {
 
 	public T foerste() {
 		if (erTom())
-			throw new EmptyCollectionException("kø");
+			throw new EmptyCollectionException("kï¿½");
 
 		T resultat = koe[0];
 		return resultat;

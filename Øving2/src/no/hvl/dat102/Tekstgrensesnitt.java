@@ -16,7 +16,7 @@ public class Tekstgrensesnitt {
 
     /**
      * Les opplysningane om ein CD frå tastaturet
-     * @return
+     * @return ein cd med alle opplysningane 
      */
     public CD lesCD() {
 
@@ -26,6 +26,7 @@ public class Tekstgrensesnitt {
 
         //scanner er ... vrient... dette fungere OK~ då
         //vil gje feilmelding så fort ein skriv feil då
+        //veit nå at ein kan bruke nextInt() men må ha ein "tom" nextLine() rett etterpå for å lese inn neste linje/linjeskift
 
         System.out.println("Skriv inn nummeret til CD-en:");
         nr = Integer.parseInt(lesar.nextLine());
@@ -52,7 +53,7 @@ public class Tekstgrensesnitt {
 
     /**
      * Visar ein CD med alle opplysningane på skjermen
-     * @param cd
+     * @param cd cden som skal visast
      */
     public void visCD(CD cd) {
         //husk tekst for sjanger
@@ -61,8 +62,8 @@ public class Tekstgrensesnitt {
 
     /**
      * Skriver ut alle CD-ar med ein spesiell delstreng i tittelen
-     * @param cda
-     * @param delstreng
+     * @param cda CDarkivet som det skal skrivast ut info om
+     * @param delstreng strengen som skal søkjast etter
      */
     public void skrivUtCDDelstrengTittel(CDarkivADT cda, String delstreng) {
         CD[] cdTab = cda.sokTittel(delstreng);
@@ -74,6 +75,8 @@ public class Tekstgrensesnitt {
 
     /**
      * Skriver ut alle CD-ar av ein artist / ei gruppe
+     * @param cda CDarkivet som det skal skrivast ut info om
+     * @param delstreng strengen som skal søkjast etter
      */
     public void skrivUtCDDelstrengArtist(CDarkivADT cda, String delstreng) {
         CD[] cdTab = cda.sokArtist(delstreng);
@@ -86,7 +89,7 @@ public class Tekstgrensesnitt {
     /**
      * Skriver ut ein enkel statistikk som inneheld antal CD-ar totalt
      * og kor mange det er i kvar sjanger
-     * @param cda
+     * @param cda CDarkivet ein skal skrive ut statistikk frå
      */
     public void skrivUtStatistikk(CDarkivADT cda) {
         System.out.println("Antal CD-ar totalt: " + cda.antall());
@@ -96,9 +99,24 @@ public class Tekstgrensesnitt {
     }
     
     /**
-     * @return the lesar
+     * Får tak i skanneren i tekstgrensesnittet for å berre ha eit skanneobjekt,
+     * som ein også kan avslutte ved programslutt.
+     * @return scanner-objektet i tekstgrensesnitt
      */
     public Scanner getScanner() {
         return lesar;
+    }
+
+    /**
+     * Skriv ut alle valalternativa for menyen
+     */
+    public void valAlternativUtskrift() {
+        System.out.println("\n---------- VALALTERNATIV ----------");
+        System.out.println("1 - Les inn ein CD og legg den inn i arkivet."); //??
+        System.out.println("2 - Slett ein CD.");
+        System.out.println("3 - Skrive ut alle CD-ar med ein gitt delstreng i tittelen.");
+        System.out.println("4 - Skrive ut alle CD-ar med ein gitt delstreng i artist-namnet.");
+        System.out.println("5 - Skriv ut statistikk om arkivet.");
+        System.out.println("0 - Avslutte programmet.");
     }
 }

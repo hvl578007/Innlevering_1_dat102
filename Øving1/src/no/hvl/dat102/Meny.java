@@ -20,6 +20,9 @@ public class Meny {
         fortsette = true; //?
     }
 
+    /**
+     * Startar opp menyen til CDarkivet
+     */
     public void start() {
         //5 val + avslutte, 1, 2, 3, 4, 5 og 0 som avslutte
 
@@ -36,7 +39,7 @@ public class Meny {
             cda = Fil.lesFraFil(filnamn);
         }
 
-        valAlternativUtskrift();
+        tekstgr.valAlternativUtskrift();
 
         do {
             try {
@@ -46,7 +49,7 @@ public class Meny {
                 val(verdi);
             } catch (NumberFormatException e) {
                 System.out.println("Ikkje eit nummer!");
-                valAlternativUtskrift();
+                tekstgr.valAlternativUtskrift();
             }
         } while (fortsette);
     }
@@ -105,18 +108,8 @@ public class Meny {
                 
             default:
                 System.out.println("\nProgrammet kjenner ikkje igjen talet du skreiv inn, prøv på nytt.\n");
-                valAlternativUtskrift();
+                tekstgr.valAlternativUtskrift();
                 break;
         }
-    }
-
-    private void valAlternativUtskrift() {
-        System.out.println("\n---------- VALALTERNATIV ----------");
-        System.out.println("1 - Les inn ein CD og legg den inn i arkivet."); //??
-        System.out.println("2 - Slett ein CD.");
-        System.out.println("3 - Skrive ut alle CD-ar med ein gitt delstreng i tittelen.");
-        System.out.println("4 - Skrive ut alle CD-ar med ein gitt delstreng i artist-namnet.");
-        System.out.println("5 - Skriv ut statistikk om arkivet.");
-        System.out.println("0 - Avslutte programmet.");
     }
 }
