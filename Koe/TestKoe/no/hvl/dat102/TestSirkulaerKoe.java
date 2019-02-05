@@ -14,6 +14,8 @@ import static org.junit.Assert.*;
  */
 public class TestSirkulaerKoe {
 
+    private final static int SIZE = 105;
+
     //Køen
     private KoeADT<Integer> koe;
 
@@ -129,5 +131,21 @@ public class TestSirkulaerKoe {
         } catch (EmptyCollectionException e) {
             fail("uventa unntak" + e.getMessage());
         }
+    }
+
+    @Test
+    public final void utviderStabelSeg() {
+    koe.innKoe(e1);
+    for (int i = 0; i < SIZE; i++) {
+        koe.innKoe(e0);
+    }
+    koe.innKoe(e2);
+    assertEquals(SIZE + 2, koe.antall());
+    assertEquals(e1, koe.utKoe());
+    for (int i = 0; i < SIZE; i++) {
+        koe.utKoe();
+    }
+    assertEquals(e2, koe.utKoe());
+    assertTrue(koe.erTom());
     }
 }
