@@ -39,6 +39,8 @@ public class CDarkiv2 implements CDarkivADT{
 
         LinearNode<CD> nynode = new LinearNode<CD>(nyCD);
 
+        /*
+        // for å leggje til på slutten:
         if(antall == 0) {
             start = nynode;
         } else {
@@ -48,6 +50,10 @@ public class CDarkiv2 implements CDarkivADT{
             }
             denne.setNeste(nynode);
         }
+        */
+        //legg til fremst
+        nynode.setNeste(start);
+        start = nynode;
 
         antall++;
     }
